@@ -1,0 +1,74 @@
+#Excersice 1
+create Database Exercise;
+use exercise;
+#FacultyDetails
+create table FacultyDetails(
+	Faculty_Id varchar(20) primary key,
+    Faculty_title varchar(7),
+    Faculty_Name varchar(30),
+    Faculty_Location varchar(30),
+    Facutl_Track varchar(15),
+    Faculty_Qualification varchar(100),
+    Facutly_Experiance numeric(11),
+    Faculty_Email varchar(100),
+    Faculty_Password varchar(20)
+);
+#Batch Details
+use exercise;
+create table BatchDetails(
+	Batch_Id varchar(20) primary key,
+    Batch_Faculty varchar(30),
+    Batch_DEPT_Name varchar(30)
+);
+#Module Details
+create table Module(
+	Module_Id varchar(20) primary key,
+    Module_Name varchar(40),
+    Module_Duration int(11)
+);
+#Student Deatails
+create table StudentDeatails(
+	Student_Id varchar(20) primary key,
+    Title varchar(7),
+    Student_Name varchar(30),
+    Student_Location varchar(30),
+    Student_Track varchar(15),
+    Student_Qualification varchar(200),
+    Student_Email varchar(100),
+    Student_Password varchar(20)
+);
+#Questions
+create table Questions(
+	Question_Id varchar(20),
+    Module_Id varchar(20),
+    Question_Text varchar(900)
+);
+#Student_Status
+create table Student_Status(
+	Student_Id varchar(20),
+    Module_Id varchar(20),
+    Start_Date varchar(20),
+    End_Date varchar(20),
+    AFeedbackGiven varchar(20),
+    TFeedbackGiven varchar(20)
+);
+#Faculty_Feedback
+create table Faculty_Feedback(
+	Faculty_Id varchar(20),
+    Question varchar(20),
+    Batch_Id varchar(20),
+    Module_Id varchar(20),
+    Faculty_Rating int(11)
+);
+#Student_Feedback
+create table Student_Feedback(
+	Student_Id varchar(20),
+    Question_Id varchar(20),
+    Module_Id varchar(20),
+    Student_Rating int(11)
+);
+#Login-Details
+create table Login_Details(
+	User_Id varchar(20),
+    User_Password varchar(20)
+);
